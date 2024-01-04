@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Inter";
+}
+
+img, svg{
+    max-width: 100%;
+    height: auto;
+}
+
+main{
+    background-image: url('/pattern-curve.svg');
+    background-position: left bottom;
+    
+    background-repeat: no-repeat;
+}
+
+.profilepic{
+    position: relative;
+    display: grid;
+    align-items: center;
+    grid-template-rows: 1fr auto;
+    justify-items: center;
+    
+}
+
+.wrapper{
+    align-self: center;
+    justify-self: center;
+    max-width: 1440px;
+}
+
+.imageContainers{
+    box-shadow: 0px 0px 4rem gainsboro;
+}
+
+
+.imageContainers > img{
+    transition: transform .2s ease;
+}
+
+.quoteContainer > section{
+    transition: transform .2s ease;
+}
+
+.tanya{
+    transform: translateX(0);
+}
+
+.john{
+    transform: translateX(-100%);
+}
+
+.quote{
+    color: hsl(240, 18%, 77%);
+}
+
+.quote > p{
+    color: hsl(240, 38%, 20%);
+    font-weight: 300;
+}
+.quote > h1{
+    color: hsl(240, 38%, 20%);
+}
+.quote > h1 > span:last-of-type{
+    color: hsl(240, 18%, 77%);
+    font-weight: 400;
+}
+
+.buttons{
+    cursor: pointer;
+    width: 50px;
+
+    background-color: white;
+    border: none;
+}
+
+.buttons:first-of-type{
+    border-radius: 1rem 0px 0px 1rem;
+}
+
+.buttons:last-of-type{
+    border-radius: 0px 1rem 1rem 0px;
+}
+@media screen and (min-width: 280px) {
+    .buttons{
+        padding: 0.5rem;
+    }
+    main{
+        background-size: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        height: 100vh;
+        align-items: center;
+    }
+    .wrapper{
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        
+        padding: 1rem;
+    }
+
+    .profilepic{
+        background-image: url('/pattern-bg.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center top;
+        padding: 3rem;
+        overflow-y: visible;
+    }
+
+    .imageContainers{
+
+        display: flex;
+       
+        width:100%;
+        flex-direction: row;
+        overflow-x: hidden;
+        
+        height:auto;
+    }
+
+
+    .buttonNavigations{
+        width: 100%;
+        display: inline-flex;
+      
+        z-index:2;
+        bottom:0;
+        justify-content: center;
+        transform: translateY(-60%);
+    }
+
+    .quoteContainer{
+        display:flex;
+        flex-direction: row;
+        overflow: hidden;
+        width:100%;
+
+       
+    }
+
+    .bottom{
+        background-image: url('/pattern-quotes.svg');
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: 20%;
+        padding: 2rem 0px;
+    }
+
+    .quote{
+        
+    
+        min-width: 100%;
+        width:100%;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    
+
+    }
+    
+
+    .quote > p{
+        text-align: center;
+    }
+
+    .quote > h1 span{
+        display: block;
+        text-align: center;
+    }
+
+}
+
+@media screen and (min-width: 800px) {
+    main{
+        background-size: 50%;
+    }
+    .buttons{
+        padding: 1rem;
+    }
+    .wrapper{
+        grid-template-columns: 1fr 1fr;
+        padding: 7rem;
+    }
+
+    .profilepic{
+        grid-column: 2/3;
+        grid-row: 1/2;
+        
+    }
+
+    .bottom{
+        background-position: center 25%;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        transform: translateX(20%);
+    }
+    .imageContainers{
+        width: 100%;
+    }
+  
+    .imageContainers > img{
+        display: block;
+    }
+    .quoteContainer > section > p {
+        font-size: 2rem;
+        text-align: start;
+    }
+
+    .quoteContainer > section {
+        justify-content: center;
+        align-items: start;
+    }
+    .quoteContainer > section > h1{
+        display: flex;
+        gap: 1rem;
+        text-align: start;
+        ;
+    }
+
+    .buttonNavigations{
+        justify-content: start;
+        PADDING-LEFT: 15%;
+    }
+}

@@ -1,94 +1,49 @@
+
+"use client"
 import Image from 'next/image'
-import styles from './page.module.css'
+import style from '../app/style.css';
+import React, {useState} from 'react';
 
 export default function Home() {
+  
+  const [tanya, setTanya] = useState(true);
+
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main>
+      <div className='wrapper'>
+        
+        <div className="profilepic">
+            <div className="imageContainers">
+              <img className={tanya? 'tanya' : 'john'} alt="Tanya" src={'./image-tanya.jpg'}></img>
+              <img alt="John" className={tanya? 'tanya' : 'john'} src={'./image-john.jpg'}></img>
+              
+            </div>
+            <div className='buttonNavigations'>
+                <button className='buttons' onClick={()=> setTanya(tanya=>true)}><img src='/icon-prev.svg'></img></button>
+                <button className='buttons' onClick={()=> setTanya(tanya=>false)}><img src='/icon-next.svg'></img></button>
+              </div>
         </div>
-      </div>
+        <div className="bottom">
+          <div className="quoteContainer">
+          <section className={tanya? 'quote tanya' : 'quote john'}>
+                <p>“ I’ve been interested in coding for a while but never taken the jump, until now. I couldn’t recommend this course enough. I’m now in the job of my dreams and so excited about the future. ”</p>
+                <h1>
+                  <span>Tanya Sinclair</span>
+                  <span>UX Engineer</span>
+                </h1>
+          
+            </section>
+            <section className={tanya? 'quote tanya' : 'quote john'}>
+                <p>“ If you want to lay the best foundation possible I’d recommend taking this course. The depth the instructors go into is incredible. I now feel so confident about starting up as a professional developer. ”</p>
+                <h1>
+                  <span>John Tarkpor </span>
+                  <span>Junior Front-end Developer</span>
+                </h1>
+            </section>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+          </div>
+        </div>
       </div>
     </main>
   )
